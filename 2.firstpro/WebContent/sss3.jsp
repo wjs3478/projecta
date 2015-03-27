@@ -7,19 +7,17 @@
 <title>Insert title here</title>
 </head>
 <body>
-<font color="red">
 <%
-out.print("죽어라");
-out.print("<br>");
-%>
-</font>
-<form>
+//내장객체 out, response, request
+String name=request.getParameter("na");
+String id=request.getParameter("id");
+String pwd=request.getParameter("pwd");
 
-</form>
-<br>
-<%
-out.print("<font color='blue'>피카츄</font>");
-%>
+out.print("니 아이디 털림<br>");
+out.print(id+"<br>");
+out.println(id+"<br>");
+out.println(pwd+"<br>");
 
+%>
 </body>
 </html>
