@@ -1,5 +1,4 @@
-package test;
-
+package exam.test;
 
 //서블릿
 import java.io.IOException;
@@ -12,16 +11,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class Exam
+ * Servlet implementation class Test
  */
-@WebServlet("/baka")	//어노테이션, url 매핑
-public class Exam extends HttpServlet {
+@WebServlet("/zzzz")
+public class Test extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Exam() {
+    public Test() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,21 +30,35 @@ public class Exam extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.setContentType("text/html; charset=UTF-8");
-		request.setCharacterEncoding("UTF-8");
-		
-		PrintWriter out = response.getWriter();
-		String name=request.getParameter("na");
-		String id=request.getParameter("id");
-		String pwd=request.getParameter("pwd");
+		response.setContentType("text/html");
+		String ma=request.getParameter("gg");
+		String na=request.getParameter("na");
+		String co=request.getParameter("co");
+		String em=request.getParameter("em");
+		String[] che=request.getParameterValues("cv");
+		String min=request.getParameter("min");
+		String su=request.getParameter("txt");
 				
-		out.print("hello get<br>");
-		out.print(name+"<br>");
-		out.print(id+"<br>");
-		out.print(pwd+"<br>");
-		//서블릿 서버+애플릿
-		//웹을 위한 자바 클래스
+		PrintWriter out=response.getWriter();
+		out.print(na+"<br>");
+		out.print(ma+"<br>"); //1이 남자 2가 여자
+		out.print("<font color='"+co+"'>"+co+"</font><br>"); //1이 남자 2가 여자
+		out.print(em+"<br>"); //1이 남자 2가 여자
+		out.print(min+"<br>"); //1이 남자 2가 여자
 		
+		
+		if(che==null)
+		{
+			out.print("select please<br>");
+		}else{
+		
+			for(int i=0;i<che.length;i++)
+			{
+			out.print(che[i]+"<br>"); //1이 남자 2가 여자
+			}
+		}
+		
+		out.print(su+"<br>"); //1이 남자 2가 여자
 		
 	}
 
@@ -54,18 +67,6 @@ public class Exam extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
-		response.setContentType("text/html; charset=UTF-8");
-		request.setCharacterEncoding("UTF-8");
-		PrintWriter out = response.getWriter();
-		String name=request.getParameter("na");
-		String id=request.getParameter("id");
-		String pwd=request.getParameter("pwd");
-				
-		out.print("hello post<br>");
-		out.print(name+"<br>");
-		out.print(id+"<br>");
-		out.print(pwd+"<br>");
 	}
 
 }
